@@ -3,6 +3,11 @@
 ARG VARIANT="4.2"
 FROM ghcr.io/rocker-org/devcontainer/tidyverse:${VARIANT}
 
+# Copy RStudio preferences
+COPY rstudio-prefs.json /rstudio-prefs.json
+COPY copy-rstudio-prefs.sh /copy-rstudio-prefs.sh
+RUN chmod +x /copy-rstudio-prefs.sh
+
 RUN install2.r --error --skipinstalled -n -1 \
         here \
         doParallel \
