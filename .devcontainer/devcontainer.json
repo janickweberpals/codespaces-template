@@ -29,7 +29,13 @@
 				"vsls-contrib.codetour",
 				"GitHub.copilot",
 				"quarto.quarto"
-			]
+			],
+			"settings": {
+				"keyboard.dispatch": "keyCode"
+			},
+			"keybindings": {
+				"file": ".devcontainer/keybindings.json"
+			}
 		}
 	},
 
