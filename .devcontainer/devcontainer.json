@@ -35,7 +35,18 @@
 				"keyboard.dispatch": "keyCode",
 				"keyboard.layout": "US",
 				"workbench.colorTheme": "Default Dark+",
-				"terminal.integrated.defaultProfile.linux": "zsh"
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"[r]": {
+					"editor.defaultFormatter": "REditorSupport.r",
+					"editor.formatOnSave": true,
+					"editor.autoIndent": "full",
+					"editor.indentSize": 2
+				},
+				"r.bracketedPaste": true,
+				"r.alwaysUseActiveTerminal": true,
+				"r.rterm.linux": "/usr/local/bin/R",
+				"r.autoIndent": true,
+				"r.formatting.indentation": 2
 			}
 		}
 	},
