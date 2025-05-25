@@ -10,11 +10,6 @@ RUN chmod +x /copy-rstudio-prefs.sh
 
 RUN install2.r --error --skipinstalled -n -1 \
         here \
-        doParallel \
-        skimr \
-        nnet \
-        kernlab \
-        plotly \
         tidymodels \
         markdown \
         gtsummary \

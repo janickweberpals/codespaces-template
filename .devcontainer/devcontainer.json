@@ -31,10 +31,10 @@
 				"quarto.quarto"
 			],
 			"settings": {
-				"keyboard.dispatch": "keyCode"
-			},
-			"keybindings": {
-				"file": ".devcontainer/keybindings.json"
+				"keyboard.dispatch": "keyCode",
+				"keyboard.layout": "US",
+				"workbench.colorTheme": "Default Dark+",
+				"terminal.integrated.defaultProfile.linux": "zsh"
 			}
 		}
 	},
