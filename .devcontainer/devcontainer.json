@@ -21,7 +21,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				// Add Jupyter and Python vscode extensions
+				// Add R, Jupyter and Python vscode extensions
+				"REditorSupport.r",
 				"ms-toolsai.jupyter",
 				"ms-toolsai.jupyter-renderers",
 				"ms-python.python",
