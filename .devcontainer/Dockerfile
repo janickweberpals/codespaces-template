@@ -23,6 +23,5 @@ RUN install2.r --error --skipinstalled -n -1 \
         MatchIt \
         MatchThem \
         smdi \
-        encore.analytics \
     && rm -rf /tmp/downloaded_packages
 
