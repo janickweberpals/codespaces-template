@@ -13,8 +13,7 @@ RUN apt-get update -qq && \
 
 # Install the 'pak' package from its dedicated repository and use it to install 'smdi'
 # Combining these steps into a single RUN command ensures the R session context is consistent.
-RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/')" && \
-    Rscript -e "pak::pak('smdi')"
+RUN R -e "install.packages('pak')"
 
 # Copy RStudio preferences
 COPY rstudio-prefs.json /rstudio-prefs.json
