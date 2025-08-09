@@ -20,7 +20,19 @@ RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/
     Rscript -e "pak::pak('gtsummary@2.3.0')" && \
     Rscript -e "pak::pak('tidymodels@1.3.0')" && \
     Rscript -e "pak::pak('markdown@2.0')" && \
-    Rscript -e "pak::pak('smdi@0.3.1')"
+    Rscript -e "pak::pak('rmarkdown@2.29')" && \
+    Rscript -e "pak::pak('card@0.2.5')" && \
+    Rscript -e "pak::pak('ggsurvfit@1.1.0')" && \
+    Rscript -e "pak::pak('survival@3.8-3')" && \
+    Rscript -e "pak::pak('gt@1.0.0')" && \
+    Rscript -e "pak::pak('smd@0.8.0')" && \
+    Rscript -e "pak::pak('quarto@1.5.0')" && \
+    Rscript -e "pak::pak('yaml@2.3.10')" && \
+    Rscript -e "pak::pak('languageserver@0.3.16')" && \
+    Rscript -e "pak::pak('WeightIt@1.4.0')" && \
+    Rscript -e "pak::pak('MatchIt@4.7.2')" && \
+    Rscript -e "pak::pak('MatchThem@1.2.1')" && \
+    Rscript -e "pak::pak('cobalt@4.6.0')"
 
 # Copy RStudio preferences
 COPY rstudio-prefs.json /rstudio-prefs.json
