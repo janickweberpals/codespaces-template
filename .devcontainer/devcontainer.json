@@ -79,13 +79,13 @@
                     "key": "cmd+Shift+m",
                     "command": "type",
                     "args": { "text": " |> " },
-                    "when": "editorTextFocus && editorLangId == rmd"
+                    "when": "editorTextFocus && editorLangId == 'rmd'"
                 },
                 {
                     "key": "Alt+-",
                     "command": "type",
                     "args": { "text": " <- " },
-                    "when": "editorTextFocus && editorLangId == rmd"
+                    "when": "editorTextFocus && editorLangId == 'rmd'"
                 },
                 {
                     "key": "cmd+Shift+m",
