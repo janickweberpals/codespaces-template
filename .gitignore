@@ -50,3 +50,19 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# ignore certain file types that could be
+# large or could contain sensitive information.
+# remove if tracking via git is desired.
+*.csv
+*.xslsx
+*.xls
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.sas7bdat
+*.parquet
+*.RDS
+*.RData
+*.txt

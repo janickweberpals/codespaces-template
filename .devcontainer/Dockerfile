@@ -39,3 +39,11 @@ RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/
 COPY rstudio-prefs.json /rstudio-prefs.json
 COPY copy-rstudio-prefs.sh /copy-rstudio-prefs.sh
 RUN chmod +x /copy-rstudio-prefs.sh
+
+# copy VS Code settings
+# Copy VS Code settings into the container's VS Code Server config folder
+COPY .devcontainer/settings.json /home/vscode/.vscode-server/data/Machine/settings.json
+COPY .devcontainer/keybindings.json /home/vscode/.vscode-server/data/Machine/keybindings.json
+
+# Ensure proper ownership
+RUN chown -R vscode:vscode /home/vscode/.vscode-server
