@@ -1,6 +1,6 @@
 # Pre-built Dev Container Image for R. More info: https://github.com/rocker-org/devcontainer-images/pkgs/container/devcontainer%2Ftidyverse
 # Available R version: 4, 4.1, 4.0
-ARG VARIANT="4.2"
+ARG VARIANT="4.4"
 FROM ghcr.io/rocker-org/devcontainer/tidyverse:${VARIANT}
 
 # Install system dependencies for common R packages
@@ -16,7 +16,9 @@ RUN apt-get update -qq && \
 # Install pak and then smdi using pak
 ENV PKG_SYSREQS=false
 RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/')" && \
-    Rscript -e "pak::pkg_install('here')"
+    Rscript -e "pak::pak('here')" && \
+    Rscript -e "pak::pak('gtsummary@2.3.0')" && \
+    Rscript -e "pak::pak('smdi@0.3.1')"
 
 # Copy RStudio preferences
 COPY rstudio-prefs.json /rstudio-prefs.json
