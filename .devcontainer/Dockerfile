@@ -7,21 +7,6 @@ FROM ghcr.io/rocker-org/devcontainer/tidyverse:${VARIANT}
 COPY rstudio-prefs.json /rstudio-prefs.json
 COPY copy-rstudio-prefs.sh /copy-rstudio-prefs.sh
 RUN chmod +x /copy-rstudio-prefs.sh
-
-RUN install2.r --error --skipinstalled -n -1 \
-        here \
-        tidymodels \
-        markdown \
-        gtsummary \
-        ggsurvfit \
-        survival \
-        gt \
-        quarto \
-        rmarkdown \
-        languageserver \
-        WeightIt \
-        MatchIt \
-        MatchThem \
-        smdi\
-    && rm -rf /tmp/downloaded_packages
+RUN R -e 'install.packages("pak")'
+RUN R -e 'pak::pak("smdi")'
 
