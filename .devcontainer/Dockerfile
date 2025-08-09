@@ -12,10 +12,8 @@ RUN apt-get update -qq && \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install R packages
-WORKDIR /root
-RUN R -e "install.packages('pak')"
-RUN Rscript -e "pak::pak('smdi')"
-
+RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/')" && \
+    Rscript -e "pak::pak('smdi')"
 
 # Copy RStudio preferences
 COPY rstudio-prefs.json /rstudio-prefs.json
