@@ -22,5 +22,6 @@ RUN install2.r --error --skipinstalled -n -1 \
         WeightIt \
         MatchIt \
         MatchThem \
+        smdi\
     && rm -rf /tmp/downloaded_packages
 
