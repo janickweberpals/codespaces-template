@@ -1,6 +1,5 @@
 # Pre-built Dev Container Image for R. More info: https://github.com/rocker-org/devcontainer-images/pkgs/container/devcontainer%2Ftidyverse
-ARG VARIANT="4.4"
-FROM ghcr.io/rocker-org/devcontainer/tidyverse:${VARIANT}
+FROM ghcr.io/rocker-org/devcontainer/tidyverse:4.4
 
 # Install system dependencies for common R packages
 RUN apt-get update -qq && \
@@ -32,7 +31,9 @@ RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/
     Rscript -e "pak::pak('WeightIt@1.4.0')" && \
     Rscript -e "pak::pak('MatchIt@4.7.2')" && \
     Rscript -e "pak::pak('MatchThem@1.2.1')" && \
-    Rscript -e "pak::pak('cobalt@4.6.0')"
+    Rscript -e "pak::pak('cobalt@4.6.0')" && \
+    Rscript -e "pak::pak('smdi@0.3.1')" && \
+    Rscript -e "pak::pak('janickweberpals/encore.analytics')"
 
 # Copy RStudio preferences
 COPY rstudio-prefs.json /rstudio-prefs.json

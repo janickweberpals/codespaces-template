@@ -1,5 +1,18 @@
 {
     "[r]": {
-        "editor.defaultFormatter": "REditorSupport.r"
+        "editor.fontSize": 15,
+        "editor.defaultFormatter": "REditorSupport.r",
+        "files.exclude": {
+            ".csv": true,
+            ".doc": true,
+            ".docx": true,
+            ".parquet": true,
+            ".pdf": true,
+            ".rdata": true,
+            ".RData": true,
+            ".rds": true,
+            ".RDS": true,
+            ".xslsx": true
+            }
     }
 }
