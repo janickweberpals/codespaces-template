@@ -16,7 +16,7 @@ RUN apt-get update -qq && \
 # Install pak and then smdi using pak
 ENV PKG_SYSREQS=false
 RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/')" && \
-    Rscript -e "pak::pkg_install('smdi')"
+    Rscript -e "pak::pkg_install('here')"
 
 # Copy RStudio preferences
 COPY rstudio-prefs.json /rstudio-prefs.json
