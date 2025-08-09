@@ -13,7 +13,6 @@ RUN apt-get update -qq && \
 
 # Install R packages
 WORKDIR /root
-RUN installr -c
 RUN R -e "install.packages('pak')"
 RUN Rscript -e "pak::pak('smdi')"
 
