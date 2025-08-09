@@ -44,7 +44,7 @@ Remember to commit and push your changes to the repository to make them availabl
 ## Installed Components
 
 ### Core Environment
-- R 4.2 with tidyverse
+- R 4.4 with tidyverse
 - RStudio Server
 - Quarto CLI
 - JupyterLab with IRkernel
@@ -65,6 +65,9 @@ Remember to commit and push your changes to the repository to make them availabl
 - WeightIt
 - MatchIt
 - MatchThem
+- cobalt
+- smdi
+- encore.analytics
 
 ### VS Code Extensions
 - Jupyter
