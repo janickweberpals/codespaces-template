@@ -3,17 +3,20 @@
 ARG VARIANT="4.2"
 FROM ghcr.io/rocker-org/devcontainer/tidyverse:${VARIANT}
 
-# Install system dependencies needed for most R packages and for pak to work correctly
+# Install system dependencies for common R packages
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
     git \
     libcurl4-openssl-dev \
     libssl-dev \
+    libxml2-dev \
+    build-essential \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install R packages
+# Install pak and then smdi using pak
+ENV PKG_SYSREQS=false
 RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/')" && \
-    Rscript -e "pak::pak('smdi')"
+    Rscript -e "pak::pkg_install('smdi')"
 
 # Copy RStudio preferences
 COPY rstudio-prefs.json /rstudio-prefs.json
