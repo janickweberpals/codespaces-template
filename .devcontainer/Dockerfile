@@ -9,6 +9,7 @@ RUN apt-get update -qq && \
     libcurl4-openssl-dev \
     libssl-dev \
     libxml2-dev \
+    libnode-dev \
     build-essential \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -17,6 +18,8 @@ ENV PKG_SYSREQS=false
 RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/')" && \
     Rscript -e "pak::pak('here')" && \
     Rscript -e "pak::pak('gtsummary@2.3.0')" && \
+    Rscript -e "pak::pak('tidymodels@1.3.0')" && \
+    Rscript -e "pak::pak('markdown@2.0')" && \
     Rscript -e "pak::pak('smdi@0.3.1')"
 
 # Copy RStudio preferences
