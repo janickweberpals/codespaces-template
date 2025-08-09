@@ -35,7 +35,16 @@ RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/
     Rscript -e "pak::pak('smdi@0.3.1')" && \
     Rscript -e "pak::pak('janickweberpals/encore.analytics')"
 
-# Copy RStudio preferences
+# Copy RStudio preferences and helper script
 COPY rstudio-prefs.json /rstudio-prefs.json
 COPY copy-rstudio-prefs.sh /copy-rstudio-prefs.sh
 RUN chmod +x /copy-rstudio-prefs.sh
+
+# Option 1: Run the script during the image build to apply preferences immediately
+RUN /copy-rstudio-prefs.sh
+
+# Option 2: Alternatively, if you want to apply the preferences when the container starts,
+# uncomment the following lines to run the script at container startup:
+# ENTRYPOINT ["/copy-rstudio-prefs.sh"]
+# CMD ["your-default-command-if-any"]
+
