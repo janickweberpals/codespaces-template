@@ -21,9 +21,11 @@ RUN R -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable/
     Rscript -e "pak::pak('markdown@2.0')" && \
     Rscript -e "pak::pak('rmarkdown@2.29')" && \
     Rscript -e "pak::pak('card@0.2.5')" && \
+    Rscript -e "pak::pak('cardx@0.2.5')" && \
     Rscript -e "pak::pak('ggsurvfit@1.1.0')" && \
     Rscript -e "pak::pak('survival@3.8-3')" && \
     Rscript -e "pak::pak('gt@1.0.0')" && \
+    Rscript -e "pak::pak('broom@1.0.9')" && \
     Rscript -e "pak::pak('smd@0.8.0')" && \
     Rscript -e "pak::pak('quarto@1.5.0')" && \
     Rscript -e "pak::pak('yaml@2.3.10')" && \
